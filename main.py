@@ -17,7 +17,7 @@ async def forward_to_ollama(request: Request, path: str):
     print("Request received")
     try:
         # Construct the full URL for the locally running Ollama instance
-        ollama_url = f"http://localhost:11434/{path}"
+        ollama_url = f"http://0.0.0.0:11434/{path}"
         logger.info(f"Forwarding request to: {ollama_url}")
 
         # Prepare headers
