@@ -4,8 +4,18 @@ from fastapi.responses import StreamingResponse
 import httpx
 import logging
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
 # Initialize the FastAPI app
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Adjust as necessary
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
